@@ -5,13 +5,21 @@
     private $username;
     private $email;
     private $senha;
-    private $projetosConcluidos;
 
-    public function  __construct ($CPF, $username, $email, $senha) {
+    public function  __construct ($CPF, $username, $email, $senha = null) {
       $this -> CPF = $CPF;
       $this -> username = $username;
       $this -> email = $email;
       $this -> senha = $senha;
+    }
+
+    /**
+     * @method Getter
+     * @return String
+     * @global
+     */
+    public function getSenha () {
+      return $this -> senha;
     }
 
     /**
@@ -39,17 +47,6 @@
      */
     public function getEmail () {
       return $this -> email;
-    }
-
-    /**
-     * @todo Retorna uma lista com * projetos
-     * @method Getter
-     * @return Array
-     * @see classes/projeto.class.php
-     * @global
-     */
-    public function getProjetosConcluidos () {
-      return $this -> projetosConcluidos;
     }
 
     /**
@@ -86,14 +83,5 @@
    */
     public function setSenha ($senha) {
       $this -> $senha = $senha;
-    }
-
-  /**
-   * @method Setter
-   * @param projeto object
-   * @global
-   */
-    public function setProjetoConcluido ($projeto) {
-      array_push($this -> projetosConcluidos, $projeto);
     }
   }
