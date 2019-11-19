@@ -1,0 +1,17 @@
+.p-two {
+    .p-how-use {
+        h3 {
+            @media (max-width: 540px) {
+                margin-top: 23%;
+            }
+            margin-top: 10%;
+            margin-bottom: 4%;
+            font-size: 2.2em;
+            font-weight: bold;
+        }
+
+        iframe {
+            width: 90%;
+        }
+    }
+}

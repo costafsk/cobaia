@@ -1,6 +1,7 @@
 <?php
 
     require_once('./DAO.php');
+    require_onde('./../classes/usuario.class.php');
 
     class Usuario extends DAO {
         public function cria ($usuario)  {
@@ -10,9 +11,9 @@
 
             $con = $this -> getConexao();
 
-            $sql = 'INSERT INTO Usuario ("CPF", "username", "email", "senha") 
+            $sql = 'INSERT INTO Usuario ("CPF", "username", "email", "senha")
                 VALUES (?, ?, ?, ?)';
-            
+
             $stm = $con -> prepare($sql);
 
             $stm -> bindValue (1, $usuario -> getCPF());
@@ -21,14 +22,14 @@
             $stm -> bindValue (4, $usuario -> getSenha());
 
             try {
-                $res = $stm -> execute(); 
+                $res = $stm -> execute();
             } catch (PDOExeption $e) {
                 $stm -> closeCursor();
                 $stm = NULL;
                 $con = NULL;
                 return array(error => $e);
             }
-            
+
             if ($res) {
                 $linha = $stm -> fetch(PDO::FETCH_ASSOC);
             } else {
@@ -46,7 +47,7 @@
             $sql='UPDATE "Usuario" SET "username" = ?, "email" = ?, "senha" = ? WHERE "CPF" = ? ';
 
             $stm = $con->prepare($sql);
-            
+
             $stm->bindValue(1, $usuario -> getUsername());
             $stm->bindValue(2, $usuario -> getEmail());
             $stm->bindValue(3, $usuario -> getSenha());
@@ -70,7 +71,7 @@
             $stm -> bindValue(2,$offset);
             $res= $stm -> execute();
             $list = array();
-            if($res){	
+            if($res){
                 while($linha = $stm->fetch(PDO::FETCH_ASSOC)){
                     $usuario = new UsuarioModelo($linha['CPF'], $linha['username'],$linha['email']);
                     array_push($list, $usuario);
@@ -87,9 +88,9 @@
             $sql = 'SELECT * FROM "Usuario" WHERE "CPF" = ?';
             $stm = $con->prepare($sql);
             $stm -> bindValue(1, $CPF);
-    
+
             $res = $stm -> execute();
-            if($res) {	
+            if($res) {
                 $linha = $stm -> fetch(PDO::FETCH_ASSOC);
                 $usuario = new UsuarioModelo ($linha['CPF'], $linha['username'],$linha['email']);
             }

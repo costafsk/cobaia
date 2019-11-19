@@ -1,0 +1,25 @@
+.p-signUp {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .p-title {
+        font-size: 3em;
+        color: $black-modern;
+        font-weight: bold;
+    }
+
+    .p-btn-register {
+        @extend .p-btn-social;
+        background-color: $github-color;
+    }
+    
+    .p-dialog-form-action {
+        margin-top: 2%;
+
+        strong {
+            margin-top: 5%;
+            color: grey;
+        }
+    }
+}

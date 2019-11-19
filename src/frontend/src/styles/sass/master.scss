@@ -1,0 +1,24 @@
+// -- Framework
+@import './../../../node_modules/materialize-css/sass/materialize.scss';
+// -- Settings
+@import './partials/settings/reset.scss';
+@import './partials/settings/colors.scss';
+@import './partials/settings/buttons.scss';
+@import './partials/settings/settings.scss';
+// -- Components
+// Carousel
+@import './partials/carousel/slideOne.scss';
+@import './partials/carousel/slideTwo.scss';
+@import './partials/carousel/slideThree.scss';
+@import './partials/carousel/slideFor.scss';
+@import './partials/carousel/slideFive.scss';
+// Form
+@import './partials/form/formSignIn.scss';
+@import './partials/form/formSignUp.scss';
+// Modal
+@import './partials/modal/modalSignIn.scss';
+@import './partials/modal/modalSignUp.scss';
+// Internal
+@import './partials/internal/search.scss';
+@import './partials/internal/choose.scss';
+@import './partials/internal/project.scss';

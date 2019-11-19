@@ -1,36 +1,38 @@
 <?php
 
     require_once('./DAO.php');
+    require_onde('./../classes/projeto.class.php');
 
     class Projeto extends DAO {
         public function cria ($projeto)  {
             $con = $this -> getConexao();
 
-            $sql = 'INSERT INTO Usuario ("CPFFreelancer", "titulo", "moeda", "tipoDePagamento", "valor", "prazo", "descricao", "CPFCriador", "status") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING ID';
-            
+            $sql = 'INSERT INTO Projeto ("titulo", "moeda", "tipoDePagamento", "valor", "prazo", "descricao", "CPFCriador", "status") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING ID';
+
             $stm = $con -> prepare($sql);
 
-            $stm -> bindValue (1, $projeto -> getFreelancer() -> getCPF());
-            $stm -> bindValue (2, $projeto -> getTitulo());
-            $stm -> bindValue (3, $projeto -> getMoeda());
-            $stm -> bindValue (4, $projeto -> getTipoDePagamento());
-            $stm -> bindValue (5, $projeto -> getValor());
-            $stm -> bindValue (6, $projeto -> getPrazo());
-            $stm -> bindValue (8, $projeto -> getDescricao());
-            $stm -> bindValue (8, $projeto -> getCriador() -> getCPF());
+            $stm -> bindValue (1, $projeto -> getTitulo());
+            $stm -> bindValue (2, $projeto -> getMoeda());
+            $stm -> bindValue (3, $projeto -> getTipoDePagamento());
+            $stm -> bindValue (4, $projeto -> getValor());
+            $stm -> bindValue (5, $projeto -> getPrazo());
+            $stm -> bindValue (6, $projeto -> getDescricao());
+            $stm -> bindValue (7, $projeto -> getCriador() -> getCPF());
             $stm -> bindValue (8, $projeto -> getStatus());
+            $stm -> bindValue (9, $projeto -> getFreelancer() -> getCPF());
 
             try {
-                $res = $stm -> execute(); 
+                $res = $stm -> execute();
             } catch (PDOExeption $e) {
                 $stm -> closeCursor();
                 $stm = NULL;
                 $con = NULL;
                 return array(error => $e);
             }
-            
+
             if ($res) {
                 $linha = $stm -> fetch(PDO::FETCH_ASSOC);
+                $projeto -> setID(intval($linha['ID']));
             } else {
                 echo $stm -> queryString;
                 var_dump($stm->errorInfo());
@@ -41,17 +43,27 @@
             return $res;
         }
 
-        public function altera ($usuario) {
+        public function altera ($Projeto) {
             $con = $this->getConexao();
-            $sql='UPDATE "Usuario" SET "username" = ?, "email" = ?, "senha" = ? WHERE "CPF" = ? ';
+
+            $sql='UPDATE "Projeto" SET "titulo" = ?, "moeda" = ?, "tipoDePagamento" = ?, "valor" = ?, "prazo"  = ?, "descricao" = ?, "CPFCriador" = ?, "status" = ?, "CPFFreelancer" =  ? WHERE "ID" = ? ';
 
             $stm = $con->prepare($sql);
-            
-            $stm->bindValue(1, $usuario -> getUsername());
-            $stm->bindValue(2, $usuario -> getEmail());
-            $stm->bindValue(3, $usuario -> getSenha());
-            $stm->bindValue(4, $usuario -> getCPF(), PDO::PARAM_INT);
+
+            $stm -> bindValue (1, $projeto -> getTitulo());
+            $stm -> bindValue (2, $projeto -> getMoeda());
+            $stm -> bindValue (3, $projeto -> getTipoDePagamento());
+            $stm -> bindValue (4, $projeto -> getValor());
+            $stm -> bindValue (5, $projeto -> getPrazo());
+            $stm -> bindValue (6, $projeto -> getDescricao());
+            $stm -> bindValue (7, $projeto -> getCriador() -> getCPF());
+            $stm -> bindValue (8, $projeto -> getStatus());
+            $stm -> bindValue (9, $projeto -> getFreelancer() -> getCPF());
+            $stm -> bindValue (10, $projeto -> getID(), PDO::PARAM_INT);
+
+
             $res = $stm->execute();
+
             if(!$res){
                 echo $stm -> queryString;
                 var_dump($stm -> errorInfo());
@@ -64,54 +76,74 @@
 
         public function lista () {
             $con = $this -> getConexao();
-            $sql = 'SELECT * FROM "Usuario" LIMIT ? OFFSET ?';
-            $stm = $con->prepare($sql);
+            $sql = 'SELECT * FROM "Projeto" LIMIT ? OFFSET ?';
+            $stm = $con -> prepare($sql);
             $stm -> bindValue(1,$limit);
             $stm -> bindValue(2,$offset);
             $res= $stm -> execute();
             $list = array();
-            if($res){	
-                while($linha = $stm->fetch(PDO::FETCH_ASSOC)){
-                    $usuario = new UsuarioModelo($linha['CPF'], $linha['username'],$linha['email']);
-                    array_push($list, $usuario);
+            if($res){
+                while($linha = $stm -> fetch(PDO::FETCH_ASSOC)){
+                    $projeto = new ProjetoModelo(
+                      $linha['titulo'],
+                      $linha['CPFCriador'],
+                      $linha['valor'],
+                      $linha['prazo'],
+                      $linha['moeda'],
+                      $linha['descricao'],
+                      $linha['tipoDePagamento'],
+                      $linha['status']
+                    );
+                    $projeto -> setID(intval($linha['ID']));
+                    array_push($list, $projeto);
                 }
             }
-            $stm->closeCursor();
-            $stm=NULL;
+            $stm -> closeCursor();
+            $stm = NULL;
             $con = NULL;
             return $list;
         }
 
-        public function busca ($CPF) {
+        public function busca ($ID) {
             $con = $this -> getConexao();
-            $sql = 'SELECT * FROM "Usuario" WHERE "CPF" = ?';
-            $stm = $con->prepare($sql);
-            $stm -> bindValue(1, $CPF);
-    
+            $sql = 'SELECT * FROM "Projeto" WHERE "ID" = ?';
+            $stm = $con -> prepare($sql);
+            $stm -> bindValue(1, $ID);
+
             $res = $stm -> execute();
-            if($res) {	
+            if($res) {
                 $linha = $stm -> fetch(PDO::FETCH_ASSOC);
-                $usuario = new UsuarioModelo ($linha['CPF'], $linha['username'],$linha['email']);
+                $projeto = new ProjetoModelo(
+                  $linha['titulo'],
+                  $linha['CPFCriador'],
+                  $linha['valor'],
+                  $linha['prazo'],
+                  $linha['moeda'],
+                  $linha['descricao'],
+                  $linha['tipoDePagamento'],
+                  $linha['status']
+                );
+                $projeto -> setID(intval($linha['ID']));
             }
             else{
-                echo $stm->queryString;
-                var_dump($stm->errorInfo());
+                echo $stm -> queryString;
+                var_dump($stm -> errorInfo());
             }
-            $stm->closeCursor();
-            $stm=NULL;
+            $stm -> closeCursor();
+            $stm = NULL;
             $con = NULL;
             return $usuario;
         }
 
-        public function deleta ($CPF) {
+        public function deleta ($ID) {
             $con = $this -> getConexao();
-            $sql = 'DELETE FROM "Usuario" WHERE "CPF" = ?';
+            $sql = 'DELETE FROM "Projeto" WHERE "ID" = ?';
             $stm = $con -> prepare($sql);
-            $stm->bindValue(1,$CPF);
-            $res = $stm->execute();
+            $stm -> bindValue(1, $ID);
+            $res = $stm -> execute();
             if(!$res){
-                echo $stm->queryString;
-                var_dump($stm->errorInfo());
+                echo $stm -> queryString;
+                var_dump($stm -> errorInfo());
             }
             $stm -> closeCursor();
             $stm = NULL;

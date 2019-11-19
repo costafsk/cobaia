@@ -1,0 +1,38 @@
+.p-one {
+    .p-article {
+        display: flex;
+        justify-content: center;
+        margin-top: 20%;
+        margin-left: 4%;
+        margin-right: 4%;
+
+        h3 {
+            @media (max-width: 900px) {
+                font-size: 3em;
+            }
+
+            font-weight: bold;
+            text-align: center;
+        }
+    }
+
+    .p-explorer {
+        display: flex;
+        justify-content: center;
+
+        @media (max-width: 900px) {
+            margin-top: 2%;
+        }
+
+        margin-top: 6%;
+        margin-bottom: 4%;
+
+        .p-btn-explorer {
+            background-color: transparent;
+            color: white;
+            border: none;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+    }
+}

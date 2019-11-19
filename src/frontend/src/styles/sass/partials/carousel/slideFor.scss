@@ -1,0 +1,26 @@
+.p-for {
+    .p-about-img {
+        margin-top: 13%;
+    }
+    .p-title {
+        @media (max-width: 600px) {
+            margin-top: 20%;
+        }
+    }
+    .p-description {
+        @media(max-width: 600px) {
+            font-size: 1em;
+            font-weight: normal;
+        }
+        font-weight: bold;
+        font-size: 3em;
+    }
+}
+
+.carousel .carousel-item > img {
+    width: 150px;
+    border-radius: 100%;
+    @media(max-width: 600px) {
+        display: none;
+    }
+}

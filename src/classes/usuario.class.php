@@ -1,16 +1,28 @@
 <?php
 
-  class Usuario {
+  class UsuarioModelo {
     private $CPF;
     private $username;
     private $email;
     private $senha;
+    private $descricao;
 
-    public function  __construct ($CPF, $username, $email, $senha = null) {
+
+    public function  __construct ($CPF, $username, $email, $senha = null, $descricao) {
       $this -> CPF = $CPF;
       $this -> username = $username;
       $this -> email = $email;
       $this -> senha = $senha;
+      $this -> descricao = $descricao;
+    }
+
+    /**
+     * @method Getter
+     * @return String
+     * @global
+     */
+    public function getDescricao () {
+      return $this -> descricao;
     }
 
     /**
@@ -83,5 +95,14 @@
    */
     public function setSenha ($senha) {
       $this -> $senha = $senha;
+    }
+
+  /**
+   * @method Setter
+   * @param descricao string
+   * @global
+   */
+    public function setDescricao ($descricao) {
+      $this -> descricao = $descricao;
     }
   }

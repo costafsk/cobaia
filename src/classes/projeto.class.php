@@ -2,24 +2,34 @@
 
   class ProjetoModelo {
     private $ID;
+    private $freelancer = null;
     private $titulo;
-    private $criador;
+    private $tipoDePagamento;
     private $valor;
     private $prazo;
+    private $descricao;
+    private $criador;
     private $moeda;
     private $status;
-    private $descricao;
-    private $tipoDePagamento;
-    private $freelancer = null;
 
-    public function  __construct ($titulo, $criador, $valor, $prazo, $moeda, $descricao, $nota, $tipoDePagamento, $status = null) {
+    public function  __construct ($titulo, $criador, $valor, $prazo, $moeda, $descricao, $tipoDePagamento, $status = 'D') {
       $this -> titulo = $titulo;
       $this -> criador = $criador;
       $this -> valor = $valor;
       $this -> prazo = $prazo;
       $this -> status = $status;
+      $this -> moeda = $moeda;
       $this -> descricao = $descricao;
       $this -> tipoDePagamento = $tipoDePagamento;
+    }
+
+    /**
+     * @method Getter
+     * @return String
+     * @global
+     */
+    public function getMoeda () {
+      return $this -> moeda;
     }
 
     /**
@@ -66,16 +76,6 @@
     public function getTipoDePagamento () {
       return $this -> tipoDePagamento;
     }
-
-    /**
-     * @method Getter
-     * @return String
-     * @global
-     */
-
-     public function getMoeda () {
-      return $this -> moeda;
-     }
 
     /**
      * @todo Traz a classe Usuario
@@ -169,6 +169,8 @@
      */
     public function setTipoDePagamento ($tipo) {
       $this -> tipoDePagamento = $tipo;
+    }    public function setMoeda ($moeda) {
+    $this -> moeda = $moeda;
     }
 
     /**
@@ -177,9 +179,9 @@
      * @global
      */
 
-     public function setMoeda ($moeda) {
-      $this -> moeda = $moeda;
-     }
+    public function setMoeda ($moeda) {
+    $this -> moeda = $moeda;
+    }
 
     /**
      * @method Setter

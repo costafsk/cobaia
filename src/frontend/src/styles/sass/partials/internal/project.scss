@@ -1,0 +1,40 @@
+.p-perfil {
+    width: 60px;
+    height: 60px;
+}
+
+.p-internal-header-project {
+    margin-top: 2%;
+    i {
+        font-size: 3em;
+    }
+}
+
+.p-internal-desc {
+    margin: 0% 10%;
+    border: 1px solid rgba(0,0,0,0.4);
+    padding: 2%;
+    border-radius: 7px;
+    box-shadow: 2px 2px 1px 1px rgba(0,0,0,0.2);
+    h5 {
+        font-weight: bold;
+    }
+}
+
+.skills {
+    margin-left: 10%;
+    i {
+        font-size: 3em;
+    }
+}
+
+.p-propostas-valor {
+    margin: 3% 3%;
+}
+
+.p-footer-internal-project {
+    margin-top: 3%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

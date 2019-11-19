@@ -1,0 +1,14 @@
+#p-modal-signUp {
+    .p-btn-modal-cancel {
+        @extend .p-btn-social;
+        background-color: $google-color;
+    }
+    .p-btn-modal-continue {
+        @extend .p-btn-social;
+        background-color: $p-purple;
+    }
+    .p-btn-modal-login {
+        @extend .p-btn-social;
+        background-color: $p-green;
+    }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "1975",
+  "version": "1.0.0",
+  "description": "\"TCA\"",
+  "main": "index.js",
+  "scripts": {
+    "gulp": "npx gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/costafsk/1975.git"
+  },
+  "keywords": [],
+  "author": "Diego Costa <diego.machado.d.costa@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/costafsk/1975/issues"
+  },
+  "homepage": "https://github.com/costafsk/1975#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-js-minify": "0.0.3",
+    "gulp-sass": "^4.0.2",
+    "node-sass": "^4.12.0"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.10.1",
+    "jquery": "^3.4.1",
+    "materialize-css": "^1.0.0"
+  }
+}

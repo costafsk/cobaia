@@ -1,0 +1,38 @@
+#p-modal-signIn {
+
+    .p-btn-signIn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .p-btn-go {
+            @extend .p-btn-sign;
+            background-color: $p-purple;
+        }
+
+        .p-btn-go:hover {
+            cursor: pointer;
+            background-color: $p-purple-solarized;
+        }
+
+        .p-btn-github {
+            @extend .p-btn-social;
+            background-color: $github-color;
+        }
+
+        .p-btn-github:hover {
+            background-color: $github-color-shadow-white;
+            cursor: pointer;
+        }
+
+        .p-btn-google {
+            @extend .p-btn-social;
+            background-color: $google-color;
+        }
+
+        .p-btn-google:hover {
+            background-color: $google-color-shadow-white;
+            cursor: pointer;
+        }
+    }
+}

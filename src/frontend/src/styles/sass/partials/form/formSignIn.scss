@@ -1,0 +1,59 @@
+.p-signIn {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .p-title {
+        font-size: 3em;
+        color: $black-modern;
+        font-weight: bold;
+    }
+
+    .p-btn-signIn {
+        display: flex;
+        justify-content: flex-start;
+        margin-left: 3%;
+        flex-direction: column;
+
+        .p-btn-go {
+            @extend .p-btn-sign;
+            background-color: $p-purple;
+        }
+
+        .p-btn-go:hover {
+            cursor: pointer;
+            background-color: $p-purple-solarized;
+        }
+
+        .p-btn-signUp {
+            @extend .p-btn-sign;
+            padding: 10px 25px;
+            background-color: $p-green;
+        }
+
+        .p-btn-signUp:hover {
+            cursor: pointer;
+            background-color: $p-green-clean;
+        }
+
+        .p-btn-github {
+            @extend .p-btn-social;
+            background-color: $github-color;
+        }
+
+        .p-btn-github:hover {
+            background-color: $github-color-shadow-white;
+            cursor: pointer;
+        }
+
+        .p-btn-google {
+            @extend .p-btn-social;
+            background-color: $google-color;
+        }
+
+        .p-btn-google:hover {
+            background-color: $google-color-shadow-white;
+            cursor: pointer;
+        }
+    }
+}

@@ -1,0 +1,32 @@
+.p-internal-header {
+    display: flex;
+    width: 85%;
+    // align-items: center;
+    justify-content: center;
+    form {
+        width: 100%;
+    }
+    i {
+        margin-top: 1%;
+        margin-left: 2%;
+        margin-right: 4%;
+        font-size: 3em;   
+    }
+}
+
+.p-internal-feed {
+    display: flex;
+    justify-content: center;
+    .img-search {
+        width: 150px;
+        height: 200px;
+    }
+    background-color: $p-green;
+    .p-feed {
+        margin-top: 1%;
+        background-color: rgba(128, 128, 128, 0.445);
+        padding: 2%;
+        border-radius: 10px;
+        padding-bottom: 10%;
+    }
+}
