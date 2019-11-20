@@ -28,6 +28,15 @@
      * @return String
      * @global
      */
+    public function getID () {
+      return $this -> ID;
+    }
+
+    /**
+     * @method Getter
+     * @return String
+     * @global
+     */
     public function getMoeda () {
       return $this -> moeda;
     }
@@ -169,8 +178,6 @@
      */
     public function setTipoDePagamento ($tipo) {
       $this -> tipoDePagamento = $tipo;
-    }    public function setMoeda ($moeda) {
-    $this -> moeda = $moeda;
     }
 
     /**
@@ -180,7 +187,7 @@
      */
 
     public function setMoeda ($moeda) {
-    $this -> moeda = $moeda;
+      $this -> moeda = $moeda;
     }
 
     /**

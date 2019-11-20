@@ -7,6 +7,6 @@
   <link rel="stylesheet" href="./../../../node_modules/jquery/dist/jquery.min.js">
   <link rel="stylesheet" href="./../../../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
   <link rel="stylesheet" href="./../../styles/css/master.css">
-  <title>Cobaia</title>
+  <title>Working</title>
 </head>
 <body>

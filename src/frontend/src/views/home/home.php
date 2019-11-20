@@ -38,7 +38,7 @@
                                 </div>
                                 <section class="p-btn-signIn">
                                     <div class="row">
-                                        <a class="p-btn-go" href="./../choose/choose.html">Entrar</a>
+                                        <a class="p-btn-go" href="./../choose/choose.php">Entrar</a>
                                     </div>
                                     <div class="row">
                                         <button class="p-btn-github">
@@ -190,7 +190,7 @@
                     </form>
                     <section class="p-btn-signIn">
                         <div class="row">
-                            <a class="p-btn-go" href="./../choose/choose.html">Entrar</a>
+                            <a class="p-btn-go" href="./../choose/choose.php">Entrar</a>
                         </div>
                         <div class="row">
                             <button class="p-btn-signUp">Criar uma nova conta</button>

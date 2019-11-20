@@ -12,7 +12,7 @@
             return new PDO ("pgsql:host=localhost;dbname=postgres;port=5432", "postgres", "");
         }
 
-        /**
+        /** 
          * @todo Cria novo projeto
          * @param Object Classe modelo
          * @method Setter
