@@ -1,47 +1,58 @@
-.p-home {
-    background-color: $p-purple-clean;
-    .p-carousel-article {
-        .p-item-fixed {
-            position: absolute;
-            top: 0px;
-            display: flex;
-            flex-direction: column;
+body {
+  height: 100vh;
+  overflow: hidden;
+}
 
-            .p-header {
-                display: flex;
-                justify-content: flex-start;
-                margin: 0% 2%;
-                .p-title {
-                    font-weight: bold;
-                    text-shadow: 1px 1px rbga(0, 0, 0, 0.4);
-                }
-            }
-            .p-button {
-                @media(min-width: 900px) {
-                    display: none;
-                }
-                display: flex;
-                justify-content: center;
-                align-items: flex-end;
-                height: 700px;
-                button {
-                    @extend .p-button-design;
-                }
-            }
-        }
-    }
-    .p-aside-social {
+.p-home {
+  background-color: $p-purple-clean;
+
+  .p-carousel-article {
+    .p-item-fixed {
+      position: absolute;
+      top: 0px;
+      display: flex;
+      flex-direction: column;
+
+      .p-header {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        height: 700px;
-        align-items: flex-end;
-        
-        i {
-            margin: 2.5% 1%;
-            color: $p-purple;
-            text-shadow: 1px 1px rgba(0,0,0,0.4);
-            font-size: 1.6em;
+        justify-content: flex-start;
+        margin: 0% 2%;
+
+        .p-title {
+          font-weight: bold;
+          text-shadow: 1px 1px rbga(0, 0, 0, 0.4);
         }
+      }
+
+      .p-button {
+        @media(min-width: 900px) {
+          display: none;
+        }
+
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        height: 700px;
+
+        button {
+          @extend .p-button-design;
+        }
+      }
     }
+  }
+
+  .p-aside-social {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 700px;
+    align-items: flex-end;
+
+    i {
+      margin: 2.5% 1%;
+      color: $p-purple;
+      text-shadow: 1px 1px rgba(0, 0, 0, 0.4);
+      font-size: 1.6em;
+    }
+  }
 }

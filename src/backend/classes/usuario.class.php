@@ -8,12 +8,11 @@
     private $descricao;
 
 
-    public function  __construct ($CPF, $username, $email, $senha = null, $descricao) {
+    public function  __construct ($CPF, $username, $email, $senha = null) {
       $this -> CPF = $CPF;
       $this -> username = $username;
       $this -> email = $email;
       $this -> senha = $senha;
-      $this -> descricao = $descricao;
     }
 
     /**

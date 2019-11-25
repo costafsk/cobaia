@@ -1,7 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const modal = document.querySelectorAll('.modal');
-  M.Modal.init(modal);
-
-  const select = document.querySelectorAll('select');
-  M.FormSelect.init(select)
+  M.Modal.init(document.querySelectorAll('.modal'));
+  M.FormSelect.init(document.querySelectorAll('select'));
 });

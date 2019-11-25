@@ -17,7 +17,6 @@ CREATE TABLE "Usuario" (
 
 CREATE TABLE "Projeto" (
   "ID" SERIAL,
-  "CPFFreelancer" VARCHAR(15),
   "titulo" VARCHAR(100) NOT NULL,
   "tipoDePagamento" TEXT NOT NULL,
   "valor" NUMERIC(5, 2) NOT NULL,
@@ -26,6 +25,7 @@ CREATE TABLE "Projeto" (
   "CPFCriador" VARCHAR(15) NOT NULL,
   "moeda" VARCHAR(15) NOT NULL,
   "status" VARCHAR (1) NOT NULL,
+  "criadoEm" TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  
 
   CONSTRAINT "ProjetoPK" PRIMARY KEY ("ID"),
   CONSTRAINT "ProjetoFKCriador" FOREIGN KEY ("CPFCriador")
@@ -40,3 +40,5 @@ CREATE TABLE "Projeto" (
 
   CONSTRAINT "CheckStatus" CHECK ("status" = 'D' or "status" = 'C')
 );
+
+INSERT INTO 

@@ -1,3 +1,4 @@
+<?php require_once('./../../includes/header.php') ?>
 <div id="modal1" class="modal">
     <div class="modal-content">
         <h4>Criar projeto</h4>
@@ -56,8 +57,8 @@
         <a href="#!" class="modal-close waves-effect waves-green center btn-flat">Criar</a>
     </div>
     </div>
-    <div class="container-fluid">
-    <header class="p-internal-header">
+    <div class="p-projects">
+    <!-- <header class="p-internal-header">
         <i class="fas fa-chevron-left" onclick="history.go(-1)"></i>
         <form>
         <div class="row">
@@ -65,61 +66,48 @@
             <input id="search" type="text" placeholder="Pesquisar Projetos">
             </div>
         </div>
-        </form>
+        </form> -->
     </header>
     <main class="p-internal-feed">
         <div class="container p-feed">
         <div class="col s10 m6">
             <div class="card horizontal">
-            <div class="card-image">
-                <img src="./../../img/ti.jpg" class="img-search">
-            </div>
-            <div class="card-stacked">
-                <div class="card-content">
-                <div class="row">
-                    <div class="col left">
-                    <h6>NodeJS</h6>
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <div class="row">
+                            <div class="col left">
+                                <h6>Captura de dados do virtual soccer da Bet365</h6>
+                            </div>
+                            <div class="col right">
+                                <strong>50$</strong>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col right">
+                                <strong>Publicado:</strong>
+                                <span>43</span>
+                            </div>
+                            <div class="col right">
+                                <strong>Propostas:</strong>
+                                <span>34</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p>Preciso capturar os dados do virtual soccer, dos resultados das partidas e salvar o mesmo no banco de dados,
+                                a pagina para extração dos dados e necessário estar logado para ver o mesmo</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col right">
-                    <strong>50$</strong>
+                    <div>
+                        <div class="card-action">
+                            <a href="./../project/project.html">Analisar Projeto</a>
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <p>Criação de uma API Rest, seria de fato o backend de uma plataforma freelancer</p>
-                </div>
-                </div>
-                <div class="card-action">
-                <a href="./../project/project.html">Analisar Projeto</a>
-                </div>
-            </div>
             </div>
         </div>
-        <div class="col s10 m6">
-            <div class="card horizontal">
-            <div class="card-image">
-                <img src="./../../img/ti.jpg" class="img-search">
-            </div>
-            <div class="card-stacked">
-                <div class="card-content">
-                <div class="row">
-                    <div class="col left">
-                    <h6>NodeJS</h6>
-                    </div>
-                    <div class="col right">
-                    <strong>50$</strong>
-                    </div>
-                </div>
-                <div>
-                    <p>Criação de uma API Rest, seria de fato o backend de uma plataforma freelancer</p>
-                </div>
-                </div>
-                <div class="card-action">
-                <a href="./../project/project.html">Analisar Projeto</a>
-                </div>
-            </div>
-            </div>
-        </div>
-        <a class="btn-floating btn-large purple darken-1 btn-add modal-trigger" href="#modal1"><i
+        <a class="btn-floating btn-large  teal accent-3 btn-my-projects modal-trigger" href="#modal1"><i class="fas fa-folder"></i></a>
+        <a class="btn-floating btn-large teal accent-3 btn-add modal-trigger" href="#modal1"><i
             class=" fas fa-plus"></i></a>
     </main>
 </div>

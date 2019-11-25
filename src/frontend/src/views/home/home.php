@@ -68,7 +68,7 @@
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <input id="modal-name" type="text" class="validate">
-                                        <label for="modal-name">Nome</label>
+                                        <label for="modal-name">Username</label>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -214,34 +214,41 @@
                 <div class="carousel-item indigo lighten-5" href="#two!">
                     <section class="p-signUp">
                         <h1 class="p-title">Sign Up</h1>
-                        <form class="col s12">
+                        <form class="col s12" action="./../../../../backend/controllers/users/iniciarCadastro.user.php" method="POST">
                             <div class="row">
                                 <div class="input-field col s6">
-                                    <input id="name" type="text" class="validate">
-                                    <label for="name">Nome</label>
+                                    <input id="name" name="username" type="text" class="validate">
+                                    <label for="name">Username</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s6">
-                                    <input id="signUpEmail" type="text" class="validate">
+                                    <input id="signUpEmail" name="email" type="text" class="validate">
                                     <label for="signUpEmail">E-mail</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s6">
-                                    <input id="signUpPassword" type="password" class="validate">
+                                    <input id="signUpCPF" name="cpf" type="text" maxlength="11" placeholder="EX: 12345678900" class="validate">
+                                    <label for="signUpCPF">CPF</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input id="signUpPassword" name="pass" type="password" class="validate">
                                     <label for="signUpPassword">Senha</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s6">
-                                    <input id="password-confirm" type="text" class="validate">
+                                    <input id="password-confirm" type="password"
+                                    name="repass" class="validate">
                                     <label for="password-confirm">Confirmar senha</label>
                                 </div>
                             </div>
                             <div class="row p-dialog-form-action">
                                 <div class="col s4">
-                                    <a class="p-btn-register" href="">Continuar</a>
+                                    <input class="p-btn-register" type="submit" value="Continuar">
                                 </div>
                                 <div class="col s4">
                                     <strong>Deslize para navegar</strong>
