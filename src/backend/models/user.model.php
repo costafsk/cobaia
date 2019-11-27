@@ -1,9 +1,9 @@
 <?php
 
-    require_once('./DAO.php');
-    require_onde('./../classes/usuario.class.php');
+    // require_once('./DAO.php');
+    // require_onde('./../classes/usuario.class.php');
 
-    class Usuario extends DAO {
+    class Usuario extends DAO  {
         public function cria ($usuario)  {
             if ($this -> busca($usuario -> getCPF())) {
                 return false;

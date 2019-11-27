@@ -1,16 +1,13 @@
--- NEW DATABASE
-CREATE DATABASE "TCA";
-
 --DROPS
-DROP TABLE IF EXISTS "Usuario";
-DROP TABLE IF EXISTS "Projeto";
+--DROP TABLE IF EXISTS "Usuario";
+--DROP TABLE IF EXISTS "Projeto";
 
 CREATE TABLE "Usuario" (
-  "CPF" VARCHAR(15) UNIQUE,
+  "CPF" VARCHAR(15),
   "username" VARCHAR(20) UNIQUE NOT NULL,
   "email" TEXT NOT NULL,
   "senha" TEXT NOT NULL,
-  "descricao" TEXT NOT NULL
+  "descricao" TEXT NOT NULL,
 
   CONSTRAINT "UsuarioPK" PRIMARY KEY ("CPF")
 );
@@ -25,7 +22,7 @@ CREATE TABLE "Projeto" (
   "CPFCriador" VARCHAR(15) NOT NULL,
   "moeda" VARCHAR(15) NOT NULL,
   "status" VARCHAR (1) NOT NULL,
-  "criadoEm" TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  
+  "criadoEm" TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 
   CONSTRAINT "ProjetoPK" PRIMARY KEY ("ID"),
   CONSTRAINT "ProjetoFKCriador" FOREIGN KEY ("CPFCriador")
@@ -33,12 +30,5 @@ CREATE TABLE "Projeto" (
     ON DELETE CASCADE
     ON UPDATE CASCADE,
 
-  CONSTRAINT "ProjetoFKFreelancer" FOREIGN KEY ("CPFFreelancer")
-    REFERENCES "Usuario"("CPF")
-    ON DELETE CASCADE
-    ON UPDATE CASCADE,
-
   CONSTRAINT "CheckStatus" CHECK ("status" = 'D' or "status" = 'C')
 );
-
-INSERT INTO 

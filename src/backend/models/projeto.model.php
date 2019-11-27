@@ -1,7 +1,6 @@
 <?php
 
-    require_once('./DAO.php');
-    require_onde('./../classes/projeto.class.php');
+    // require_onde('./../classes/projeto.class.php');
 
     class Projeto extends DAO {
         public function cria ($projeto)  {

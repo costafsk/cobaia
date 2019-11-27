@@ -2,7 +2,6 @@
 
   class ProjetoModelo {
     private $ID;
-    private $freelancer = null;
     private $titulo;
     private $tipoDePagamento;
     private $valor;
@@ -48,15 +47,6 @@
      */
     public function getStatus () {
       return $this -> status;
-    }
-
-    /**
-     * @method Getter
-     * @return String
-     * @global
-     */
-    public function getFreelancer () {
-      return $this -> freelancer;
     }
 
     /**
@@ -188,15 +178,6 @@
 
     public function setMoeda ($moeda) {
       $this -> moeda = $moeda;
-    }
-
-    /**
-     * @method Setter
-     * @param Object
-     * @global
-     */
-    public function setFreelancer ($freelancer) {
-      $this -> freelancer = $freelancer;
     }
 
     /**

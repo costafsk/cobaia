@@ -1,0 +1,30 @@
+.p-register {
+  height: 100vh;
+  background-color: $p-purple;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+
+  form,
+  h3 {
+    margin-left: 15vh;
+  }
+
+  form {
+    textarea {
+      height: 30vh;
+      color: rgb(26, 26, 26);
+    }
+
+    label {
+      font-size: 1.4em;
+      margin-bottom: 10%;
+    }
+  }
+
+  div>h3 {
+    color: white;
+    font-weight: bold;
+  }
+}
