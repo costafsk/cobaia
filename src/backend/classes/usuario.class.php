@@ -93,7 +93,7 @@
    * @global
    */
     public function setSenha ($senha) {
-      $this -> $senha = $senha;
+      $this -> senha = $senha;
     }
 
   /**

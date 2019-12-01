@@ -15,11 +15,13 @@ CREATE TABLE "Usuario" (
 CREATE TABLE "Projeto" (
   "ID" SERIAL,
   "titulo" VARCHAR(100) NOT NULL,
+  "tipoDeProjeto" VARCHAR(100) NOT NULL,
   "tipoDePagamento" TEXT NOT NULL,
   "valor" NUMERIC(5, 2) NOT NULL,
   "prazo" VARCHAR(100) NOT NULL,
   "descricao" TEXT NOT NULL,
   "CPFCriador" VARCHAR(15) NOT NULL,
+  "requisitos" TEXT NOT NULL,
   "moeda" VARCHAR(15) NOT NULL,
   "status" VARCHAR (1) NOT NULL,
   "criadoEm" TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -30,5 +32,5 @@ CREATE TABLE "Projeto" (
     ON DELETE CASCADE
     ON UPDATE CASCADE,
 
-  CONSTRAINT "CheckStatus" CHECK ("status" = 'D' or "status" = 'C')
+  CONSTRAINT "CheckStatus" CHECK ("status" = 'D' or "status" = 'P' or "status" = 'A')
 );

@@ -1,5 +1,15 @@
 <?php require_once('./../../includes/header.php') ?>
 
+<?php
+
+session_start();
+
+if ($_SESSION['register'] === NULL) {
+  header('Location: ./../../views/home/home.php');
+}
+
+?>
+
 <main>
     <div class="indigo lighten-1 white-text p-choose">
         &nbsp;
@@ -19,6 +29,5 @@
     </div>
 </main>
 <?php require_once('./../../includes/footer.php') ?>
-<script src="./index.js"></script>
 </body>
 </html>

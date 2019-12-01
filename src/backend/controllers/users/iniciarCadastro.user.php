@@ -3,6 +3,7 @@
 require_once('./../../classes/usuario.class.php');
 require_once('./../../models/DAO.php');
 require_once('./../../models/user.model.php');
+require_once('./../../utils/utils.class.php');
 
 $user = new Usuario();
 
@@ -22,7 +23,8 @@ if ($username && $email && $pass && $repass && $cpf) {
     } else if ($_POST['pass'] !== $_POST['repass']) {
         header('Location: ./../../../../frontend/src/views/home/home.php?status=300');
     } else {
-        $usuario -> setSenha($_POST['pass']);
+        $utils = new Utils();
+        $usuario -> setSenha($utils -> encrypt($_POST['pass']));
         session_start();
         $usuarioSerializado = serialize($usuario);
         $_SESSION['register'] = $usuarioSerializado;

@@ -10,8 +10,11 @@
     private $criador;
     private $moeda;
     private $status;
+    private $requisitos;
+    private $tipoDeProjeto;
+    private $criadoEm;
 
-    public function  __construct ($titulo, $criador, $valor, $prazo, $moeda, $descricao, $tipoDePagamento, $status = 'D') {
+    public function  __construct ($titulo, $criador, $valor, $prazo, $moeda, $descricao, $tipoDePagamento, $requisitos, $tipoDeProjeto, $status = 'A') {
       $this -> titulo = $titulo;
       $this -> criador = $criador;
       $this -> valor = $valor;
@@ -20,6 +23,35 @@
       $this -> moeda = $moeda;
       $this -> descricao = $descricao;
       $this -> tipoDePagamento = $tipoDePagamento;
+      $this -> requisitos = $requisitos;
+      $this -> tipoDeProjeto = $tipoDeProjeto;
+    }
+
+    /**
+     * @method Getter
+     * @return String
+     * @global
+     */
+    public function getCriadoEm() {
+      return $this -> criadoEM;
+    }
+
+    /**
+     * @method Getter
+     * @return String
+     * @global
+     */
+    public function getRequisitos () {
+      return $this -> requisitos;
+    }
+
+    /**
+     * @method Getter
+     * @return String
+     * @global
+     */
+    public function getTipoDeProjeto () {
+      return $this -> tipoDeProjeto;
     }
 
     /**
@@ -188,4 +220,31 @@
     public function setStatus ($status) {
       $this -> status = $status;
     }
+
+  /**
+   * @method Setter
+   * @param String
+   * @global
+   */
+  public function setRequisitos ($requisitos) {
+    $this -> requisitos = $requisitos;
   }
+
+  /**
+   * @method Setter
+   * @param String
+   * @global
+   */
+  public function setTipoDeProjeto ($tipoDeProjeto) {
+    $this -> tipoDeProjeto = $tipoDeProjeto;
+  }
+
+  /**
+   * @method Setter
+   * @return String
+   * @global
+   */
+  public function setCriadoEm ($criadoEm) {
+    $this -> criadoEM = $criadoEm;
+  }
+}

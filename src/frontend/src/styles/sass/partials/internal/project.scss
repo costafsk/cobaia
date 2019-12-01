@@ -23,6 +23,11 @@
   }
 }
 
+.p-return {
+  margin-left: 3%;
+  margin-right: 5%;
+}
+
 .skills {
   margin-left: 10%;
 
@@ -42,22 +47,27 @@
   align-items: center;
 }
 
+.p-nav {
+  background-color: $p-purple;
+}
 .p-internal-feed {
   display: flex;
   justify-content: center;
-
+  margin-top: 1%;
   .img-search {
     width: 150px;
     height: 200px;
   }
-
-  .p-feed {
+  .p-skills {
     margin-top: 1%;
-    height: 80vh;
-    background-color: white;
-    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
-    padding: 2%;
-    padding-bottom: 10%;
+    .p-skill {
+      padding: 4px;
+      border-radius: 6px;
+      background-color: rgb(54, 62, 63);
+      strong {
+        font-weight: bold;
+      }
+    }
   }
 }
 
@@ -67,6 +77,77 @@
   height: 100vh;
 }
 
+.p-indicator {
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+  height: 9vh;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  h4 {
+    margin-bottom: 2%;
+    margin-left: 2%;
+    color: $p-purple;
+    font-weight: bold;
+  }
+}
+
 .card {
-  border: 1px solid grey;
+  .p-card-top {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    .right {
+      margin-top: 1%;
+      text-align: end;
+      width: 100%;
+    }
+  }
+  .p-title {
+    font-weight: bold;
+    font-size: 2em;
+  }
+  .p-moeda {
+    font-weight: bold;
+    font-size: 1.3em;
+    color: green;
+  }
+  .p-desc {
+    font-size: 1.4em;
+
+  }
+  border: 2px solid $p-purple;
+}
+
+.p-detalhes {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  .p-indicator {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    width: 80%;
+  }
+  article {
+    width: 80%;
+  }
+}
+
+.p-usuario {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  form {
+    border: 2px solid $p-purple;
+    border-radius: 7px;
+    padding: 3%;
+    margin: 3% 0%;
+    width: 80%;
+  }
+}
+
+.p-button-edit {
+  margin-top: 4%;
 }

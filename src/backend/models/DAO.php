@@ -9,7 +9,7 @@
          * @return Boolean
          */
         public function getConexao () {
-            return new PDO ("pgsql:host=localhost;dbname=cobaia;port=5432", "postgres", "");
+            return new PDO ("pgsql:host=localhost;dbname=ifrs;port=5432", "costafsk", "1234dev");
         }
 
         /**
@@ -36,7 +36,7 @@
          * @return Array
          */
 
-        abstract protected function lista ();
+        abstract protected function lista ($limit, $offset);
 
         /**
          * @todo Deleta projeto
