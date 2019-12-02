@@ -1,15 +1,12 @@
 .p-three {
     .p-work-as {
-        @media (max-width: 540px) {
-            margin-top: 30%;
-        }
-        margin-top: 18%;
-        margin-right: 10%; 
-        margin-left: 10%;
 
-        .p-top {
-            
+        @media (max-width: 540px) {
+            margin-top: 40%;
         }
+        margin-top: 30%;
+        margin-right: 10%;
+        margin-left: 10%;
 
         .p-top:hover {
             cursor: pointer;
@@ -18,11 +15,6 @@
         .divider {
             margin: 12% 0%;
         }
-
-        .p-bottom {
-
-        }
-
         .p-bottom:hover {
             cursor: pointer;
         }

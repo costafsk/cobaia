@@ -9,7 +9,7 @@
          * @return Boolean
          */
         public function getConexao () {
-            return new PDO ("pgsql:host=localhost;dbname=ifrs;port=5432", "costafsk", "1234dev");
+            return new PDO ("pgsql:host=localhost;dbname=working;port=5432", "postgres", "postgres");
         }
 
         /**

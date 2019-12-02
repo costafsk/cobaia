@@ -187,29 +187,17 @@
             </div>
             <div class="p-btn-signIn">
               <div class="row">
-                <input type="submit" class="p-btn-go" value="Entrar">
+                <div class="col">
+                  <input type="submit" class="p-btn-go" value="Entrar">
+                </div>
+              </div>
+              <div class="row">
+                  <div class="col">
+                    <button class="p-btn-signUp">Criar uma nova conta</button>
+                  </div>
               </div>
             </div>
           </form>
-          <section class="p-btn-signIn">
-            <div class="row">
-              <button class="p-btn-signUp">Criar uma nova conta</button>
-            </div>
-            <div class="row">
-              <button class="p-btn-github">
-                Entrar com Github
-                &nbsp;
-                <i class="fab fa-github"></i>
-              </button>
-            </div>
-            <div class="row">
-              <button class="p-btn-google">
-                Entrar com Google
-                &nbsp;
-                <i class="fab fa-google"></i>
-              </button>
-            </div>
-          </section>
         </div>
         <div class="carousel-item indigo lighten-5" href="#two!">
           <section class="p-signUp">

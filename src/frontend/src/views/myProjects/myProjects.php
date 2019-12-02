@@ -22,7 +22,7 @@ $projetos = $model->listaProjetosDoUsuario(10, 0, $user->getCPF());
 <div class="p-projects">
   <nav>
     <div class="nav-wrapper p-nav">
-      <a href="./../choose/choose.php">
+      <a href="./../projects/projects.php">
         <i class="fas fa-chevron-left p-return"></i>
       </a>
       <a href="#!" class="brand-logo">Working</a>
